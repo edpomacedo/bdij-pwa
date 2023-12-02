@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import Container from './components/Container/Container';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div class="container-fluid">
         <div class="row mb-5">
           <Sidebar />
+          <Container />
         </div>
       </div>
     </div>

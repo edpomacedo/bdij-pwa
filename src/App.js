@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 
 // Adicione os componentes para as páginas
 import Ementas from './components/Search/Ementas';
+import Informativos from './components/Search/Informativos';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<Container />} />
               {/* Rotas de busca */}
               <Route path="/ementas" element={<Ementas />} />
+              <Route path="/informativos" element={<Informativos />} />
             </Routes>
           </div>
         </div>

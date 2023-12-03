@@ -28,7 +28,7 @@ function Sidebar() {
                         <li className="nav-item">
                             <a className="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="https://bdij.com.br/">
                                 <HouseIcon />
-                                <Link to="/">Principal</Link>
+                                <Link to="/" style={{ textDecoration: 'none' }}>Principal</Link>
                             </a>
                         </li>
                     </ul>
@@ -76,7 +76,7 @@ function Sidebar() {
                         <li className="nav-item">
                             <a className="nav-link d-flex align-items-center gap-2" href="https://bdij.com.br/ementas">
                                 <FileEarmarkMedicalIcon />
-                                <Link to="/ementas">Ementas</Link>
+                                <Link to="/ementas" style={{ textDecoration: 'none' }}>Ementas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
@@ -86,9 +86,9 @@ function Sidebar() {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link d-flex align-items-center gap-2 disabled" href="https://bdij.com.br/">
+                            <a className="nav-link d-flex align-items-center gap-2" href="https://bdij.com.br/informativos">
                                 <FileEarmarkTextIcon />
-                                Informativos
+                                <Link to="/informativos" style={{ textDecoration: 'none' }}>Informativos</Link>
                             </a>
                         </li>
                         <li className="nav-item">

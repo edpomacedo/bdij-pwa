@@ -72,6 +72,16 @@ const Informativos = () => {
     return (
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="row">
+                <div class="col-md-9 col-12">
+                    {topicResults.map(({ title, content }, index) => (
+                        <div className="card mb-4" key={index}>
+                            <div className="card-header">{title}</div>
+                            <div className="card-body">
+                                <p className="card-text">{content}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
                 <div className="col-md-3 mb-4">
                     <div className="accordion accordion-flush" id="accordionExample">
                         <div className="accordion-item">
@@ -91,16 +101,6 @@ const Informativos = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-9 col-12">
-                    {topicResults.map(({ title, content }, index) => (
-                        <div className="card mb-4" key={index}>
-                            <div className="card-header">{title}</div>
-                            <div className="card-body">
-                                <p className="card-text">{content}</p>
-                            </div>
-                        </div>
-                    ))}
                 </div>
             </div>
         </main>

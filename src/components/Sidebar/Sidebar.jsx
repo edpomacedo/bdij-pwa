@@ -1,5 +1,6 @@
 // Sidebar.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HouseIcon from '../Icons/HouseIcon';
 import WikipediaIcon from '../Icons/WikipediaIcon';
 import SearchIcon from '../Icons/SearchIcon';
@@ -27,7 +28,7 @@ function Sidebar() {
                         <li className="nav-item">
                             <a className="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="https://bdij.com.br/">
                                 <HouseIcon />
-                                Principal
+                                <Link to="/">Principal</Link>
                             </a>
                         </li>
                     </ul>
@@ -73,9 +74,9 @@ function Sidebar() {
                     </h6>
                     <ul className="nav flex-column mb-auto">
                         <li className="nav-item">
-                            <a className="nav-link d-flex align-items-center gap-2" href="https://bdij.com.br/ementas/">
+                            <a className="nav-link d-flex align-items-center gap-2" href="https://bdij.com.br/ementas">
                                 <FileEarmarkMedicalIcon />
-                                Ementas
+                                <Link to="/ementas">Ementas</Link>
                             </a>
                         </li>
                         <li className="nav-item">

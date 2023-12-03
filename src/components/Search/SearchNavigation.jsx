@@ -3,7 +3,7 @@ import React from 'react';
 
 const SearchNavigation = () => {
     return (
-        <ul className="nav nav-underline">
+        <ul className="nav nav-underline mb-4">
             <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="https://bdij.com.br/ementas/">Ementas</a>
             </li>

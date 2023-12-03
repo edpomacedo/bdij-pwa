@@ -1,6 +1,7 @@
-// ... (importações e outros códigos)
-import React, { useState, useEffect, useCallback } from 'react';  // Certifique-se de incluir 'useCallback'
+// Ementas.jsx
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import SearchNavigation from './SearchNavigation';
 import FunnelIcon from '../Icons/FunnelIcon';
 import ProxyStatus from '../Buttons/ProxyStatus';
 
@@ -45,30 +46,29 @@ const Ementas = () => {
     };
 
     return (
-        
-            <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div className="input-group mb-3">
-                    <span className="input-group-text">
-                        <FunnelIcon />
-                    </span>
-                    <span className="input-group-text">
-                        <ProxyStatus />
-                    </span>
-                    <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} className="form-control" placeholder="Digite palavras-chave"
-                        aria-label="Search" aria-describedby="basic-addon1" />
-                    <button onClick={searchMediaWiki} className="btn btn-outline-secondary" type="button">Filtrar</button>
-                </div>
-                <p>{resultCount} resultados encontrados.</p>
-                {results.map(result => (
-                    <div className="card mb-4" key={result.id}>
-                        <div className="card-body">
-                            <span dangerouslySetInnerHTML={highlightQuery(result.source, query)} />
-                        </div>
+        <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <SearchNavigation />
+            <div className="input-group mb-3">
+                <span className="input-group-text">
+                    <FunnelIcon />
+                </span>
+                <span className="input-group-text">
+                    <ProxyStatus />
+                </span>
+                <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} className="form-control" placeholder="Digite palavras-chave"
+                    aria-label="Search" aria-describedby="basic-addon1" />
+                <button onClick={searchMediaWiki} className="btn btn-outline-secondary" type="button">Filtrar</button>
+            </div>
+            <p>{resultCount} resultados encontrados.</p>
+            {results.map(result => (
+                <div className="card mb-4" key={result.id}>
+                    <div className="card-body">
+                        <span dangerouslySetInnerHTML={highlightQuery(result.source, query)} />
                     </div>
-                ))}
-                <p className="d-none">{noResultsMessage}</p>
-            </main>
-        
+                </div>
+            ))}
+            <p className="d-none">{noResultsMessage}</p>
+        </main>
     );
 };
 

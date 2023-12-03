@@ -87,6 +87,12 @@ function Sidebar() {
                         <li className="nav-item">
                             <a className="nav-link d-flex align-items-center gap-2 disabled" href="https://bdij.com.br/">
                                 <FileEarmarkTextIcon />
+                                Informativos
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link d-flex align-items-center gap-2 disabled" href="https://bdij.com.br/">
+                                <FileEarmarkTextIcon />
                                 Legislação
                             </a>
                         </li>

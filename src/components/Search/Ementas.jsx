@@ -1,5 +1,5 @@
-// Ementas.jsx
-import React, { useState, useEffect } from 'react';
+// ... (importações e outros códigos)
+import React, { useState, useEffect, useCallback } from 'react';  // Certifique-se de incluir 'useCallback'
 import axios from 'axios';
 import FunnelIcon from '../Icons/FunnelIcon';
 import ProxyStatus from '../Buttons/ProxyStatus';
@@ -10,7 +10,7 @@ const Ementas = () => {
     const [noResultsMessage, setNoResultsMessage] = useState('');
     const [resultCount, setResultCount] = useState(0);
 
-    const searchMediaWiki = async () => {
+    const searchMediaWiki = useCallback(async () => {
         try {
             const response = await axios.get(`https://web.bdij.com.br/w/api.php?action=query&format=json&list=search&srsearch=${query}&origin=*`);
             const searchResults = response.data.query.search;
@@ -31,11 +31,11 @@ const Ementas = () => {
         } catch (error) {
             console.error('Error searching MediaWiki:', error);
         }
-    };
+    }, [query, resultCount]);
 
     useEffect(() => {
         searchMediaWiki();
-    }, [query]);
+    }, [searchMediaWiki, query]);
 
     const highlightQuery = (text, query) => {
         // Função para destacar a palavra de busca
@@ -45,9 +45,8 @@ const Ementas = () => {
     };
 
     return (
-        <div>
+        
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
                 <div className="input-group mb-3">
                     <span className="input-group-text">
                         <FunnelIcon />
@@ -57,10 +56,9 @@ const Ementas = () => {
                     </span>
                     <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} className="form-control" placeholder="Digite palavras-chave"
                         aria-label="Search" aria-describedby="basic-addon1" />
-                    <button onClick={searchMediaWiki} className="btn btn-outline-secondary" type="button">Pesquisar</button>
+                    <button onClick={searchMediaWiki} className="btn btn-outline-secondary" type="button">Filtrar</button>
                 </div>
                 <p>{resultCount} resultados encontrados.</p>
-
                 {results.map(result => (
                     <div className="card mb-4" key={result.id}>
                         <div className="card-body">
@@ -68,11 +66,9 @@ const Ementas = () => {
                         </div>
                     </div>
                 ))}
-
                 <p className="d-none">{noResultsMessage}</p>
-
             </main>
-        </div>
+        
     );
 };
 

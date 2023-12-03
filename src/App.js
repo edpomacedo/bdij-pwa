@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Container from './components/Container/Container';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Container />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

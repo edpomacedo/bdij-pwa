@@ -18,7 +18,7 @@ const Ementas = () => {
 
             // Para cada resultado, fazer uma chamada individual para obter mais informações
             const detailedResults = await Promise.all(searchResults.map(async result => {
-                const detailedResponse = await axios.get(`https://proxy.bdij.com.br/proxy?resource=${result.title}`);
+                const detailedResponse = await axios.get(`https://api.bdij.com.br/rest?resource=${result.title}`);
                 return {
                     id: result.id,
                     title: result.title,

@@ -9,7 +9,7 @@ const Informativos = () => {
     useEffect(() => {
         const fetchSearchResults = async () => {
             try {
-                const response = await axios.get('https://proxy.bdij.com.br/proxy', {
+                const response = await axios.get('https://api.bdij.com.br/rest', {
                     params: {
                         resource: `Talk:${encodeURIComponent(selectedTalk)}`,
                     },

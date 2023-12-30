@@ -101,6 +101,14 @@ const Jurisprudencia = () => {
     searchMediaWiki();
   };
 
+  // Função para limpar a pesquisa
+  const handleClearSearch = () => {
+    setQuery("");
+    setResults([]);
+    setNoResultsMessage("");
+    navigate(""); // Remove o parâmetro da busca da URL
+  };
+
   // Função para copiar o conteúdo para a área de transferência
   const handleCopyClick = (content) => {
     // Cria um elemento temporário para armazenar o texto
@@ -166,6 +174,7 @@ const Jurisprudencia = () => {
           <button
             className="jurisprudencia_button"
             variant="primary"
+            onClick={handleClearSearch} // Adiciona a função de limpar a pesquisa
             type="button"
           >
             <RecycleIcon className="w-4 h-4" />

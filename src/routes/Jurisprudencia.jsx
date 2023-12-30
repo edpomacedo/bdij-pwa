@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import './Jurisprudencia.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "../components/Icons/SearchIcon";
@@ -70,6 +71,11 @@ const Jurisprudencia = () => {
     }
   }, [searchMediaWiki, query]);
 
+  useEffect(() => {
+    // Atualiza o título da página com base na query
+    document.title = `${query || "Jurisprudência"} :: BDIJ`;
+  }, [query]);
+
   const handleSearch = () => {
     // Adiciona o parâmetro da busca à URL
     navigate(`?query=${encodeURIComponent(query)}`);
@@ -78,9 +84,9 @@ const Jurisprudencia = () => {
   };
 
   return (
-    <div className="bg-[#F5F5F5]">
-      <main className="container mx-auto py-6 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow">
-        <div className="flex items-center justify-center py-6 col-span-full sm:order-first lg:order-none">
+    <div className="jurisprudencia_div">
+      <main className="jurisprudencia_main">
+        <div className="jurisprudencia_box">
           <div className="relative w-full">
             <input
               type="text"
@@ -91,12 +97,12 @@ const Jurisprudencia = () => {
                 navigate(`?query=${encodeURIComponent(e.target.value)}`);
               }}
               placeholder="Digite palavras-chave"
-              className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-400 sm:text-sm sm:leading-6"
+              className="jurisprudencia_input"
             />
-            <SearchIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+            <SearchIcon className="jurisprudencia_search_icon" />
           </div>
           <button
-            className="rounded ml-4 border py-2 pl-2 pr-2 border-gray-300 hover:bg-gray-200 bg-white"
+            className="jurisprudencia_button"
             variant="primary"
             onClick={handleSearch}
             type="button"
@@ -104,13 +110,13 @@ const Jurisprudencia = () => {
             <MicIcon className="w-4 h-4" />
           </button>
           <button
-            className="rounded ml-4 border py-2 pl-2 pr-2 border-gray-300 hover:bg-gray-200 bg-white"
+            className="jurisprudencia_button"
             variant="primary"
           >
             <RecycleIcon className="w-4 h-4" />
           </button>
         </div>
-        <section className="col-span-full sm:col-span-1 lg:col-span-3">
+        <section className="jurisprudencia_results">
           {results.map((result) => (
             <Ementas
               key={result.id}

@@ -17,5 +17,5 @@
 }
 
 .logo {
-  @apply animate-pulse mx-auto mb-4;
+  @apply mx-auto mb-4;
 }

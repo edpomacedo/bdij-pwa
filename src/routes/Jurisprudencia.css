@@ -1,0 +1,33 @@
+/* Jurisprudencia.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.jurisprudencia_div {
+  @apply bg-[#F5F5F5];
+}
+
+.jurisprudencia_main {
+  @apply container mx-auto py-6 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow;
+}
+
+.jurisprudencia_box {
+  @apply flex items-center justify-center py-6 col-span-full sm:order-first lg:order-none;
+}
+
+.jurisprudencia_input {
+  @apply block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-400 sm:text-sm sm:leading-6;
+}
+
+.jurisprudencia_search_icon {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400;
+}
+
+.jurisprudencia_button {
+  @apply rounded ml-4 border py-2 pl-2 pr-2 border-gray-300 hover:bg-gray-200 bg-white;
+}
+
+.jurisprudencia_results {
+  @apply col-span-full sm:col-span-1 lg:col-span-3;
+}

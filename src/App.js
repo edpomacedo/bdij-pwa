@@ -1,31 +1,27 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Container from './components/Container/Container';
-import Footer from './components/Footer/Footer';
+import Header from './layouts/Header/Header';
+import Container from './layouts/Container/Container';
+import Footer from './layouts/Footer/Footer';
 
 // Adicione os componentes para as páginas
-import Ementas from './components/Search/Ementas';
-import Informativos from './components/Search/Informativos';
+import Jurisprudencia from './routes/Jurisprudencia'
+import Informativos from './routes/Informativos';
 
 function App() {
   return (
     <Router>
       <div>
         <Header />
-        <div className="container-fluid">
-          <div className="row mb-5">
-            <Sidebar />
+        <div>
+          <div>
             {/* Routes no lugar de Switch */}
             <Routes>
               {/* Raiz */}
               <Route path="/" element={<Container />} />
               {/* Rotas de busca */}
-              <Route path="/ementas" element={<Ementas />} />
+              <Route path="/jurisprudencia" element={<Jurisprudencia />} />
               <Route path="/informativos" element={<Informativos />} />
             </Routes>
           </div>

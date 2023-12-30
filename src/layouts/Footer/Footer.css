@@ -1,0 +1,23 @@
+/* Footer.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer_container {
+  @apply bg-white text-gray-800 py-4 px-4 sm:px-0 text-xs border-t;
+  /* bg-white text-gray-800 py-4 px-4 sm:px-0 text-xs border-t border-lightgray */
+}
+
+.footer_grid {
+  @apply container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4;
+  /* container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 */
+}
+
+.footer_column {
+  @apply flex justify-between items-center col-span-full sm:col-span-2 lg:col-span-4;
+  /* flex justify-between items-center col-span-full sm:col-span-2 lg:col-span-3 */
+}
+
+.footer_wrapper {
+  @apply flex justify-end items-center col-span-full;
+}

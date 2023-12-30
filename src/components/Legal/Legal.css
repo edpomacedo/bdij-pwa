@@ -1,0 +1,16 @@
+/* Legal.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.legal_container {
+  @apply flex justify-end items-center col-span-full sm:col-span-2 lg:col-span-1;
+}
+
+.legal_link {
+  @apply mx-2;
+}
+
+.legal_icon {
+  @apply w-4 h-4;
+}

@@ -1,0 +1,21 @@
+/* Header.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Registrar classes Tailwind como estilos personalizados */
+.header {
+  @apply bg-white border-b;
+}
+
+.canvas {
+  @apply container mx-auto py-6 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow;
+}
+
+.bloco {
+  @apply text-center py-6 col-span-full;
+}
+
+.logo {
+  @apply animate-pulse mx-auto mb-4;
+}

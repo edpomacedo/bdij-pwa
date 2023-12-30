@@ -1,0 +1,12 @@
+/* Copyright.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.copyright_container {
+  @apply flex flex-row items-center;
+}
+
+.copyright_text {
+  @apply mr-2;
+}

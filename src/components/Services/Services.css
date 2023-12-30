@@ -1,0 +1,20 @@
+/* Services.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.lista {
+  @apply mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8;
+}
+
+.divisor {
+  @apply border-t border-gray-200 pt-4;
+}
+
+.termo {
+  @apply font-medium text-gray-900 hover:font-bold active:border-b-2 focus:border-black;
+}
+
+.definicao {
+  @apply mt-2 text-sm text-gray-500;
+}

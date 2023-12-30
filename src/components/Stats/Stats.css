@@ -1,0 +1,32 @@
+/* Stats.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stats_fundo {
+  @apply bg-white py-24 sm:py-32;
+}
+
+.stats_espacamento {
+  @apply mx-auto max-w-7xl px-6 lg:px-8;
+}
+
+.stats_malha {
+  @apply grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3;
+}
+
+.stats_coluna {
+  @apply mx-auto flex max-w-xs flex-col gap-y-4;
+}
+
+.stats_numero {
+  @apply text-base leading-7 text-gray-600;
+}
+
+.stats_ativo {
+  @apply order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl;
+}
+
+.stats_esqueleto {
+  @apply animate-pulse bg-gray-300 h-6 w-24 mb-4 rounded-md;
+}

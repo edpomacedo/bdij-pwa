@@ -1,0 +1,40 @@
+/* Providers.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.providers_fundo {
+  @apply bg-[#F5F5F5] py-24 sm:py-32 hidden sm:block;
+}
+
+.providers_margem {
+  @apply mx-auto max-w-7xl px-6 lg:px-8;
+}
+
+.providers_texto {
+  @apply text-center text-lg font-semibold leading-8 text-gray-900;
+}
+
+.providers_matriz {
+  @apply mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5;
+}
+
+.providers_vercel {
+  @apply col-span-2 max-h-12 w-full object-contain lg:col-span-1;
+}
+
+.providers_wikimedia {
+  @apply col-span-2 max-h-12 w-full object-contain lg:col-span-1;
+}
+
+.providers_wikibase {
+  @apply col-span-2 max-h-12 w-full object-contain lg:col-span-1;
+}
+
+.providers_cloudflare {
+  @apply col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1;
+}
+
+.providers_github {
+  @apply col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1;
+}

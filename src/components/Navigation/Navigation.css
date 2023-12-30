@@ -1,0 +1,12 @@
+/* Navigation.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav ul {
+  @apply flex justify-center gap-4;
+}
+
+nav li {
+  @apply text-gray-900 hover:font-bold active:border-b-2 focus:border-black;
+}

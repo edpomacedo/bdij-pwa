@@ -1,0 +1,20 @@
+/* Card.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply bg-white rounded border border-gray-300 mb-10;
+}
+
+.card_title {
+  @apply p-5 text-gray-900 font-bold;
+}
+
+.card_content {
+  @apply p-5;
+}
+
+.card_footer {
+  @apply w-full p-2.5 mt-2.5 border-t border-gray-300 hover:bg-gray-200;
+}

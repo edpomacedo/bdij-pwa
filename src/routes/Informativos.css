@@ -1,0 +1,17 @@
+/* Informativos.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.informativos_div {
+  @apply bg-[#F5F5F5];
+}
+
+.informativos_main {
+  @apply container mx-auto py-6 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow;
+}
+
+.informativos_section {
+  @apply col-span-full py-6 sm:col-span-1 lg:col-span-3;
+}

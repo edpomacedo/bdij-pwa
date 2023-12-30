@@ -1,5 +1,5 @@
-// Informativos.jsx
 import React, { useState, useEffect } from "react";
+import './Informativos.css';
 import axios from "axios";
 import Topics from "../components/Topics/Topics";
 import Card from "../components/Card/Card";
@@ -48,14 +48,19 @@ const Informativos = () => {
     fetchSearchResults();
   }, [selectedTalk]); // Executa sempre que selectedTalk for alterado
 
+  // Atualiza o título da página com base no tópico selecionado
+  useEffect(() => {
+    document.title = `${selectedTalk || "Selecionar Tópico"} @ Informativos :: BDIJ`;
+  }, [selectedTalk]);
+
   const handleTalkChange = (newSelectedTalk) => {
     setSelectedTalk(newSelectedTalk);
   };
 
   return (
-    <div className="bg-[#F5F5F5]">
-      <main className="container mx-auto py-6 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow">
-        <section className="col-span-full py-6 sm:col-span-1 lg:col-span-3">
+    <div className="informativos_div">
+      <main className="informativos_main">
+        <section className="informativos_section">
           {topicResults.map(({ title, content }, index) => (
             <Card key={index} title={title} content={content}>
               <CopyIcon className="w-4 h-4 mx-auto" />
@@ -63,7 +68,7 @@ const Informativos = () => {
           ))}
         </section>
         <div className="py-6">
-        <Topics onRadioChange={handleTalkChange} />
+          <Topics onRadioChange={handleTalkChange} />
         </div>
       </main>
     </div>

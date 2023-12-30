@@ -57,13 +57,45 @@ const Informativos = () => {
     setSelectedTalk(newSelectedTalk);
   };
 
+  // Função para copiar o conteúdo para a área de transferência
+  const handleCopyClick = (content) => {
+    // Cria um elemento temporário para armazenar o texto
+    const tempInput = document.createElement("textarea");
+    tempInput.value = content;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+
+    // Copia o texto para a área de transferência
+    document.execCommand("copy");
+
+    // Remove o elemento temporário
+    document.body.removeChild(tempInput);
+
+    // Exibe uma notificação
+    if ("Notification" in window && Notification.permission === "granted") {
+      new Notification("Texto copiado para a área de transferência!");
+    } else if ("Notification" in window && Notification.permission !== "denied") {
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          new Notification("Texto copiado para a área de transferência!");
+        }
+      });
+    } else {
+      // Se as notificações não são suportadas ou estão bloqueadas
+      alert("Texto copiado para a área de transferência!");
+    }
+  };
+
   return (
     <div className="informativos_div">
       <main className="informativos_main">
         <section className="informativos_section">
           {topicResults.map(({ title, content }, index) => (
             <Card key={index} title={title} content={content}>
-              <CopyIcon className="w-4 h-4 mx-auto" />
+              <CopyIcon
+                className="w-4 h-4 mx-auto"
+                onClick={() => handleCopyClick(content)}
+              />
             </Card>
           ))}
         </section>

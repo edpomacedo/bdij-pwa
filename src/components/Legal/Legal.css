@@ -8,7 +8,7 @@
 }
 
 .legal_link {
-  @apply mx-2;
+  @apply mx-2 hover:fill-slate-500;
 }
 
 .legal_icon {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './Informativos.css';
+import "./Informativos.css";
 import axios from "axios";
 import Topics from "../components/Topics/Topics";
 import Card from "../components/Card/Card";
@@ -50,7 +50,9 @@ const Informativos = () => {
 
   // Atualiza o título da página com base no tópico selecionado
   useEffect(() => {
-    document.title = `${selectedTalk || "Selecionar Tópico"} @ Informativos :: BDIJ`;
+    document.title = `${
+      selectedTalk || "Selecionar Tópico"
+    } @ Informativos :: BDIJ`;
   }, [selectedTalk]);
 
   const handleTalkChange = (newSelectedTalk) => {
@@ -74,7 +76,10 @@ const Informativos = () => {
     // Exibe uma notificação
     if ("Notification" in window && Notification.permission === "granted") {
       new Notification("Texto copiado para a área de transferência!");
-    } else if ("Notification" in window && Notification.permission !== "denied") {
+    } else if (
+      "Notification" in window &&
+      Notification.permission !== "denied"
+    ) {
       Notification.requestPermission().then((permission) => {
         if (permission === "granted") {
           new Notification("Texto copiado para a área de transferência!");
@@ -92,10 +97,10 @@ const Informativos = () => {
         <section className="informativos_section">
           {topicResults.map(({ title, content }, index) => (
             <Card key={index} title={title} content={content}>
-              <CopyIcon
-                className="w-4 h-4 mx-auto"
-                onClick={() => handleCopyClick(content)}
-              />
+              <button onClick={() => handleCopyClick(content)}>
+                <CopyIcon className="w-5 h-5 mr-5 mx-auto" />
+              </button>
+              <small>Copiar o resultado para a área de transferência</small>
             </Card>
           ))}
         </section>
